@@ -1546,7 +1546,7 @@ var PopulateOutlook = function (WeatherParameters)
         UpdateWeatherCanvas(WeatherParameters, canvasOutlook);
     };
     //BackGroundImage.src = "images/BackGround1_" + _Themes.toString() + ".png";
-    BackGroundImage.src = "images/BackGround1_1.png";
+    BackGroundImage.src = "images/background1_1.png";
 };
 
 var GetOutlookDescription = function (OutlookIndicator)

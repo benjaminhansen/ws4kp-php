@@ -319,7 +319,7 @@ var GetCurrentWeather = function(WeatherParameters)
         //GetWeatherHazards(WeatherParameters);
     };
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -369,7 +369,7 @@ var GetClosestCurrentWeather = function (WeatherParameters, Distance)
     Url += "," + WeatherParameters.Latitude;
     //Url = "cors/?u=" + encodeURIComponent(Url);
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -493,7 +493,7 @@ var GetClosestCurrentWeather = function (WeatherParameters, Distance)
 //    Url += "MonthlyHistory.html";
 //    //Url = "cors/?u=" + encodeURIComponent(Url);
 
-//    // Load the xml file using ajax 
+//    // Load the xml file using ajax
 //    $.ajaxCORS({
 //        type: "GET",
 //        url: Url,
@@ -634,7 +634,7 @@ var GetMonthPrecipitation = function (WeatherParameters) {
                         Url += WeatherParameters.Longitude.toString();
                         Url += "&days=1&date=" + Now.getFullYear().pad() + (Now.getMonth() + 1).pad(2) + Now.getDate().pad(2) + "&format=json";
 
-                        // Load the xml file using ajax 
+                        // Load the xml file using ajax
                         $.ajaxCORS({
                             type: "GET",
                             url: Url,
@@ -699,7 +699,7 @@ var GetMonthPrecipitation = function (WeatherParameters) {
     //Url += LastOfMonth.getFullYear().pad() + (LastOfMonth.getMonth() + 1).pad(2) + LastOfMonth.getDate().pad(2);
     //Url += "/lang:EN/units:english/bestfct:1/v:2.0/q/" + WeatherParameters.ZipCode + ".json?showObs=0&ttl=120";
 
-    //// Load the xml file using ajax 
+    //// Load the xml file using ajax
     //$.ajaxCORS({
     //    type: "GET",
     //    url: Url,
@@ -730,7 +730,7 @@ var GetMonthPrecipitation = function (WeatherParameters) {
     //            Url += WeatherParameters.Longitude.toString();
     //            Url += "&days=1&date=" + Now.getFullYear().pad() + (Now.getMonth() + 1).pad(2) + Now.getDate().pad(2) + "&format=json";
 
-    //            // Load the xml file using ajax 
+    //            // Load the xml file using ajax
     //            $.ajaxCORS({
     //                type: "GET",
     //                url: Url,
@@ -799,7 +799,7 @@ var GetTideInfo = function (WeatherParameters)
 
     WeatherParameters.WeatherTides = null;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -821,7 +821,7 @@ var GetTideInfo = function (WeatherParameters)
                 GetCurrentWeather(WeatherParameters);
                 ShowRegionalMap(_WeatherParameters);
                 //GetMarineForecast(_WeatherParameters);
-                
+
                 return;
             }
 
@@ -848,7 +848,7 @@ var GetTideInfo = function (WeatherParameters)
                 WeatherTide.StationName = StationName;
                 WeatherParameters.WeatherTides.push(WeatherTide);
 
-                // Load the xml file using ajax 
+                // Load the xml file using ajax
                 $.ajaxCORS({
                     type: "GET",
                     url: Url,
@@ -954,7 +954,7 @@ var GetTideInfo2 = function (WeatherParameters) {
 
     WeatherParameters.WeatherTides = null;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -999,7 +999,7 @@ var GetTideInfo2 = function (WeatherParameters) {
                 WeatherTide.StationName = StationName;
                 WeatherParameters.WeatherTides.push(WeatherTide);
 
-                // Load the xml file using ajax 
+                // Load the xml file using ajax
                 $.ajaxCORS({
                     type: "GET",
                     url: Url,
@@ -1223,7 +1223,7 @@ var PopulateTideInfo = function (WeatherParameters)
         });
 
         //WeatherParameters.Progress.Almanac = LoadStatuses.Loaded;
-        
+
         UpdateWeatherCanvas(WeatherParameters, canvasAlmanacTides);
     };
     //BackGroundImage.src = "images/BackGround1_1.png";
@@ -1588,7 +1588,7 @@ var GetMarineForecast = function (WeatherParameters)
 
     WeatherParameters.MarineForecast = null;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -1645,7 +1645,7 @@ var GetMarineForecast = function (WeatherParameters)
             var Url = "https://forecast.weather.gov/shmrn.php?mz=";
             Url += MarineZoneId;
 
-            // Load the xml file using ajax 
+            // Load the xml file using ajax
             $.ajaxCORS({
                 type: "GET",
                 url: Url,
@@ -1699,7 +1699,7 @@ var GetMarineForecast = function (WeatherParameters)
                     }
 
                     MarineForecast.SeasOrWaves = "SEAS";
-                    
+
                     var fontForecast = $html.find("font[size='+1'][color='#800000']");
                     fontForecast.each(function (DayIndex)
                     {
@@ -1799,7 +1799,7 @@ var GetMarineForecast = function (WeatherParameters)
                                     Index2 = ForecastText.indexOf(" KT", Index);
                                     if (Index2 == -1) Index2 = ForecastText.indexOf(" KNOT", Index);
                                     WindSpeedHigh = parseInt(ForecastText.substr(Index, Index2 - Index));
-                                    
+
                                     if (isNaN(WindSpeedLow) == true)
                                     {
                                         WindSpeedLow = WindSpeedHigh;
@@ -2250,7 +2250,7 @@ var GetAirQuality = function (WeatherParameters)
 
     WeatherParameters.AirQuality = null;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -2274,7 +2274,7 @@ var GetAirQuality = function (WeatherParameters)
             var IndexValue = 0;
 
             var AirQuality = {};
-            
+
             if (tdDate.text().indexOf("Tomorrow") != -1)
             {
                 date = date.addDays(1);
@@ -2287,7 +2287,7 @@ var GetAirQuality = function (WeatherParameters)
             AirQuality.Date = date;
             AirQuality.Ppb = parseInt(ppb);
             AirQuality.IndexValue = IndexValue;
-            
+
             WeatherParameters.AirQuality = AirQuality;
 
             PopulateAirQuality(WeatherParameters);
@@ -2375,7 +2375,7 @@ var GetAirQuality2 = function (WeatherParameters)
 
     WeatherParameters.AirQuality = null;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -2464,7 +2464,7 @@ var GetAirQuality3 = function (WeatherParameters)
 
     WeatherParameters.AirQuality = null;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -2752,7 +2752,7 @@ var GetMoonPhases = function (WeatherParameters)
     Url += "&tz=" + tz.toString();
     //Url = "cors/?u=" + encodeURIComponent(Url);
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajax({
         type: "GET",
         url: Url,
@@ -2822,7 +2822,7 @@ var GetSunRiseSets = function (WeatherParameters, Tomorrow)
     Url += "&tz=" + tz.toString();
     //Url = "cors/?u=" + encodeURIComponent(Url);
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajax({
         type: "GET",
         url: Url,
@@ -2899,7 +2899,7 @@ Date.prototype.dst = function ()
 
 //    var Url = Hazards[0].hazardTextURL;
 
-//    // Load the xml file using ajax 
+//    // Load the xml file using ajax
 //    $.ajax({
 //        type: "GET",
 //        url: Url,
@@ -2937,7 +2937,7 @@ Date.prototype.dst = function ()
 //    var Url = "http://www2.ehs.niu.edu/emulator/" + RadarId + "/";
 //    //Url = "cors/?u=" + encodeURIComponent(Url);
 
-//    // Load the xml file using ajax 
+//    // Load the xml file using ajax
 //    $.ajaxCORS({
 //        type: "GET",
 //        url: Url,
@@ -2981,7 +2981,7 @@ var GetWeatherHazards3 = function (WeatherParameters)
     var HazardUrls = [];
     var HazardCounter = 0;
 
-    WeatherParameters.WeatherHazardConditions = 
+    WeatherParameters.WeatherHazardConditions =
     {
         ZoneId: WeatherParameters.ZoneId,
         Hazards: [],
@@ -2990,7 +2990,7 @@ var GetWeatherHazards3 = function (WeatherParameters)
     var Url = "https://alerts.weather.gov/cap/wwaatmget.php?x=" + ZoneId + "&y=0";
     //Url = "cors/?u=" + encodeURIComponent(Url);
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -3132,7 +3132,7 @@ var GetWeatherMetar = function (WeatherParameters)
     //$("head").append(s);
     //return;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -3183,7 +3183,7 @@ var GetWeatherForecast = function (WeatherParameters)
 
     //var DoAjax = function ()
     //{
-    //    // Load the xml file using ajax 
+    //    // Load the xml file using ajax
     //    $.ajax({
     //        type: "GET",
     //        url: Url,
@@ -4789,7 +4789,7 @@ var UpdatePlayPosition = function ()
     //    _PlayMs = 0;
     //    Navigate(1);
     //}
-            
+
 
     //NavigateNext();
 };
@@ -5450,7 +5450,7 @@ var WeatherMetarsParser = function (xml, StationId)
     {
         this.data_METAR = new ResponseDataMetar(response.find("data").find("METAR").first());
     }
-    
+
 };
 
 //var WeatherRegionalMetarsParser = function (xml)
@@ -5478,7 +5478,7 @@ var WeatherMetarsParser = function (xml, StationId)
 //        _self.data_METAR.push(DataMetar);
 //    });
 
-    
+
 //};
 
 //http://www.moratech.com/aviation/metar-class/metar-pg10-sky.html
@@ -6213,7 +6213,7 @@ var PopulateCurrentConditions = function (WeatherParameters)
     divVisibility.html("Visibility: " + parseInt(WeatherCurrentConditions.Visibility) + " mi.");
     divWind.html("Wind: " + WeatherCurrentConditions.WindDirection + " " + WeatherCurrentConditions.WindSpeed);
     divPressure.html("Pressure: " + WeatherCurrentConditions.Pressure + " " + WeatherCurrentConditions.PressureDirection);// + " " + WeatherCurrentConditions.PressureDirection);
-    
+
     //switch (WeatherCurrentConditions.PressureDirection)
     //{
     //    case "R": //&uarr;
@@ -7355,7 +7355,7 @@ var ConvertConditionsToMetric = function (Condition)
         }
         catch (ex) { }
     }
-    
+
     Metric = Words.join(' ');
     Metric = Metric.replaceAll(" ?", "");
 
@@ -7370,12 +7370,12 @@ if (!String.prototype.startsWith)
         return this.substr(position, searchString.length) === searchString;
     };
 }
-if (!String.prototype.endsWith) 
+if (!String.prototype.endsWith)
 {
     String.prototype.endsWith = function(searchString, position)
     {
         var subjectString = this.toString();
-        if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length) 
+        if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position || position > subjectString.length)
         {
             position = subjectString.length;
         }
@@ -7391,7 +7391,7 @@ var PopulateLocalForecast = function (WeatherParameters)
     {
         return;
     }
-    
+
     var WeatherLocalForecast = WeatherParameters.WeatherLocalForecast;
 
     var DontLoadGifs = _DontLoadGifs;
@@ -8262,7 +8262,7 @@ var GetLatLng = function (Url)
     //        _WeatherParameters.City = City;
     //        _WeatherParameters.State = State;
     //        _WeatherParameters.TimeZone = TimeZone;
-            
+
     //        _WeatherParameters.Progress = new Progress({
     //            WeatherParameters: _WeatherParameters,
     //            OnLoad: function ()
@@ -8527,7 +8527,7 @@ var SunRiseSetParser = function (json)
 var SunRiseSetParser2 = function (html)
 {
     var _self = this;
-    
+
     _self.SunRise = html.find("td:contains(Actual Time)").next().text();
     _self.TimeZone = _self.SunRise.split(" ").splice(2, 1).join(" ");
     _self.SunRise = _self.SunRise.split(" ").splice(0, 2).join(" ");
@@ -8590,10 +8590,10 @@ var SunRiseSetParser3 = function (json) {
     }
 
     if (riseSet.set == "Sun set doesn't exist" || riseSet.set == undefined)
-    {    
+    {
         _self.SunSet = "";
     }
-    else 
+    else
     {
         var setTime = riseSet.set.split("T")[1].split(":");
         _self.SunSet = setTime[0] + ":" + setTime[1];
@@ -8883,7 +8883,7 @@ var PopulateAlmanacInfo = function (WeatherParameters)
 var GetDateFromUTC = function (date, utc)
 {
     var time = utc.split(":");
-    
+
     //date.setUTCHours(time[0], time[1], 0, 0);
     date = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), time[0], time[1], 0));
 
@@ -8994,7 +8994,7 @@ var ConvertDateToTimeZone = function(date, timezone)
     var dt = new Date(date);
     dt = dt.addHours(OldOffset * -1);
     dt = dt.addHours(NewOffset);
-    
+
     return dt;
 }
 
@@ -9122,7 +9122,7 @@ var GetTravelWeather = function (WeatherParameters)
 
         //Url = "cors/?u=" + encodeURIComponent(Url);
 
-        // Load the xml file using ajax 
+        // Load the xml file using ajax
         $.ajaxCORS({
             type: "GET",
             url: Url,
@@ -9473,7 +9473,7 @@ var PopulateTravelCities = function (WeatherParameters)
         {
             var TravelCity = this;
             var WeatherTravelForecast = TravelCity.WeatherTravelForecast;
-            
+
             DrawText(context, "Star4000 Large Compressed", "24pt", "#FFFF00", 80, y, TravelCity.Name, 2);
 
             if (WeatherTravelForecast && WeatherTravelForecast.Icon != "images/r/")
@@ -9647,7 +9647,7 @@ var GetRegionalStations = function (WeatherParameters, Distance)
     var Total = _MaximumRegionalStations;
     var Count = 0;
 
-    // Load the xml file using ajax 
+    // Load the xml file using ajax
     $.ajaxCORS({
         type: "GET",
         url: Url,
@@ -9801,7 +9801,7 @@ var GetDwmlRegionalStations = function (WeatherParameters, Distance)
         Url += "&lon=" + _WeatherMetarsParser.data_METAR.longitude.toString();
         //Url = "cors/?u=" + encodeURIComponent(Url);
 
-        // Load the xml file using ajax 
+        // Load the xml file using ajax
         $.ajaxCORS({
             type: "GET",
             url: Url,
@@ -10121,7 +10121,7 @@ var ShowRegionalMap = function (WeatherParameters, TomorrowForecast1, TomorrowFo
             IsNightTime = false;
             GetTomorrowsForecast = true;
         }
-        else 
+        else
         {
             // Todays's nighttime forecast
             if (Today.getHours() == 0)
@@ -10149,7 +10149,7 @@ var ShowRegionalMap = function (WeatherParameters, TomorrowForecast1, TomorrowFo
             IsNightTime = true;
             GetTonightsForecast = true;
         }
-        else 
+        else
         {
             // Today's daytime forecast
             if (Today.getHours() == 0)
@@ -10652,7 +10652,7 @@ var ShowRegionalMap = function (WeatherParameters, TomorrowForecast1, TomorrowFo
             Url += "&lon=" + RegionalCity.Longitude.toString();
             //Url = "cors/?u=" + encodeURIComponent(Url);
 
-            // Load the xml file using ajax 
+            // Load the xml file using ajax
             $.ajaxCORS({
                 type: "GET",
                 url: Url,
@@ -10762,7 +10762,7 @@ var ShowRegionalMap = function (WeatherParameters, TomorrowForecast1, TomorrowFo
                     Url += "&stationString=" + StationId;
                     //Url = "cors/?u=" + encodeURIComponent(Url);
 
-                    // Load the xml file using ajax 
+                    // Load the xml file using ajax
                     $.ajaxCORS({
                         type: "GET",
                         url: Url,
@@ -10780,7 +10780,7 @@ var ShowRegionalMap = function (WeatherParameters, TomorrowForecast1, TomorrowFo
 
                             var weatherCurrentConditions = new WeatherCurrentConditions(weatherDwmlParser, weatherMetarsParser);
                             //console.log(WeatherParameters.WeatherCurrentConditions);
-                            
+
                             if (weatherCurrentConditions.Conditions == "")
                             {
                                 console.error("No current conditions data for '" + RegionalCity.Name + "'");
@@ -11329,7 +11329,7 @@ var ShowDopplerMap = function (WeatherParameters)
         var RadarImages = [];
         var RadarContexts = [];
 
-        // Load the xml file using ajax 
+        // Load the xml file using ajax
         $.ajaxCORS({
             type: "GET",
             url: Url,
@@ -11996,7 +11996,7 @@ var RemoveDopplerRadarImageNoise = function (RadarContext)
 {
     var RadarImageData = RadarContext.getImageData(0, 0, RadarContext.canvas.width, RadarContext.canvas.height);
 
-    // examine every pixel, 
+    // examine every pixel,
     // change any old rgb to the new-rgb
     for (var i = 0; i < RadarImageData.data.length; i += 4)
     {
@@ -12104,7 +12104,7 @@ var RemoveDopplerRadarImageNoise2 = function (RadarContext)
 {
     var RadarImageData = RadarContext.getImageData(0, 0, RadarContext.canvas.width, RadarContext.canvas.height);
 
-    // examine every pixel, 
+    // examine every pixel,
     // change any old rgb to the new-rgb
     for (var i = 0; i < RadarImageData.data.length; i += 4)
     {
@@ -12215,7 +12215,7 @@ var MergeDopplerRadarImage = function (MapContext, RadarContext)
     var MapImageData = MapContext.getImageData(0, 0, MapContext.canvas.width, MapContext.canvas.height);
     var RadarImageData = RadarContext.getImageData(0, 0, RadarContext.canvas.width, RadarContext.canvas.height);
 
-    // examine every pixel, 
+    // examine every pixel,
     // change any old rgb to the new-rgb
     for (var i = 0; i < RadarImageData.data.length; i += 4)
     {
@@ -12363,7 +12363,7 @@ var Progress = function (e)
             }
             //DrawText(context, "Star4000 Extended", "16pt", StatusColor, 500, OffsetY, StatusText, 2);
             DrawText(context, "Star4000 Extended", "19pt", StatusColor, 565, OffsetY, StatusText, 2, "end");
-            
+
             //OffsetY += 25;
             OffsetY += 29;
         };
@@ -12391,7 +12391,7 @@ var Progress = function (e)
         //DrawText(context, "Star4000 Extended", "16pt", "#ffffff", 70, OffsetY, "Hazardous Weather: " + (WeatherParameters.Progress.Hazards == true ? "Loaded" : "Loading...")); OffsetY += 25;
 
         UpdateWeatherCanvas(WeatherParameters, $(canvas));
-        
+
     };
 
     this.GetTotalPercentage = function()
@@ -12630,7 +12630,7 @@ var UpdateWeatherCanvas = function (WeatherParameters, Canvas)
     var bottom = undefined;
 
     var context = Canvas[0].getContext("2d");
-    
+
     if (_ScrollText != "")
     {
         OkToDrawCustomScrollText = true;
@@ -12753,7 +12753,7 @@ var DrawCurrentDateTime = function (context, bottom)
     shadow = 2;
     //x = 410;
     //y = 65;
-    
+
     // Clear the date and time area.
     if (bottom)
     {
@@ -12912,7 +12912,7 @@ var DrawNoaaImage = function (context)
             context.drawImage(_NoaaImage, 356, 39);
         };
         //_NoaaImage.src = "Images/noaa4.png";
-        _NoaaImage.src = "Images/noaa5.gif";
+        _NoaaImage.src = "images/noaa5.gif";
     }
     else
     {
@@ -12933,7 +12933,7 @@ var DrawLogoImage = function (context)
         };
         //LogoImage.src = "Images/Logo1.png";
         //_LogoImage.src = "Images/Logo3.gif";
-        _LogoImage.src = "Images/Logo3.png";
+        _LogoImage.src = "images/Logo3.png";
     }
     else
     {
@@ -13258,7 +13258,7 @@ $.ajaxCORS = function (e)
     {
         var Method = Methods[MethodIndex];
         Url = Method.Url;
-        
+
         if (Method.EncodeURIComponent == true)
         {
             Url += encodeURIComponent(e.url);
@@ -13752,13 +13752,13 @@ var LoadAudio = function(Url)
         req.responseType = "arraybuffer";
         req.onload = function ()
         {
-            //decode the loaded data 
+            //decode the loaded data
             _AudioContext.decodeAudioData(req.response, function (buffer)
             {
-                //create a source node from the buffer 
+                //create a source node from the buffer
                 _AudioBufferSource = _AudioContext.createBufferSource();
                 _AudioBufferSource.buffer = buffer;
-                ////connect to the final output node (the speakers) 
+                ////connect to the final output node (the speakers)
                 //_AudioBufferSource.connect(_AudioContext.destination);
 
                 _AudioDuration = buffer.duration;
@@ -14731,7 +14731,7 @@ var GetVerboseText = function (Text)
     Text = " " + Text;
     Text = Text.replaceAll("\n", " ");
     Text = Text.replaceAll("*", " ");
-    
+
     Text = Text.replaceAll(" MPH", " MILES PER HOUR");
     Text = Text.replaceAll(" KPH", " KILOMETERS PER HOUR");
     Text = Text.replaceAll(" IN.", " INCHES ");
@@ -14920,7 +14920,7 @@ var LoadBeep = function ()
         req.responseType = "arraybuffer";
         req.onload = function ()
         {
-            //decode the loaded data 
+            //decode the loaded data
             _BeepContext.decodeAudioData(req.response, function (buffer)
             {
                 if (_IsBeepPlaying == true)
@@ -14928,7 +14928,7 @@ var LoadBeep = function ()
                     return;
                 }
 
-                //create a source node from the buffer 
+                //create a source node from the buffer
                 _BeepBufferSource = _BeepContext.createBufferSource();
                 _BeepBufferSource.buffer = buffer;
 

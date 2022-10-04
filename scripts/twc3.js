@@ -13447,7 +13447,7 @@ var AudioPlayToggle = function ()
 
             if (_AudioContext == null && audMusic.attr("src") == "")
             {
-                ////audio.src = "Audio/Andrew Korus - Hello There.mp3";
+                ////audio.src = "audio/Andrew Korus - Hello There.mp3";
                 //audio.src = GetNextMusicUrl();
                 //audio.load();
                 LoadAudio(GetNextMusicUrl());
@@ -13631,79 +13631,79 @@ var AudioOnTimeUpdate = function ()
 
 var PopulateMusicUrls = function ()
 {
-    _MusicUrls = [];
-    _MusicUrls.push("Audio/Andrew Korus - Hello There.mp3");
-    _MusicUrls.push("Audio/Ficara - Stormy Weather.mp3");
-    _MusicUrls.push("Audio/Incognito - Larc En Ciel De Miles.mp3");
-    _MusicUrls.push("Audio/Ozzie Ahlers - Fingerpainting.mp3");
-    _MusicUrls.push("Audio/Ray Obiedo - Blue Kiss.mp3");
-    _MusicUrls.push("Audio/Richard Tyznik - Hi Times.mp3");
-    _MusicUrls.push("Audio/Torcuato Mariano - Ocean Way.mp3");
-    _MusicUrls.push("Audio/Gota - All Alone.mp3");
-    _MusicUrls.push("Audio/Ficara - High Tides Of Maui.mp3");
-    _MusicUrls.push("Audio/Chris Camozzi - Swing Shift.mp3");
-    _MusicUrls.push("Audio/Brian Hughes - StringBean.mp3");
-    _MusicUrls.push("Audio/Brian Hughes - Postcard From Brazil.mp3");
-    _MusicUrls.push("Audio/Brian Hughes - One 2 One.mp3");
-    _MusicUrls.push("Audio/Brian Hughes - Here We Go.mp3");
-    _MusicUrls.push("Audio/Brian Hughes - Three Graces.mp3");
-    _MusicUrls.push("Audio/Ficara - Friends Forever.mp3");
-    _MusicUrls.push("Audio/Physical Therapy - What The Flush.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - The Blizzard Song.mp3");
-    _MusicUrls.push("Audio/Terry Coleman - Just Groovin.mp3");
-    _MusicUrls.push("Audio/Terry Coleman - Autumn Dance.mp3");
-    _MusicUrls.push("Audio/Terry Coleman - Amazed.mp3");
-    _MusicUrls.push("Audio/Ray Obiedo - Sienna.mp3");
-    _MusicUrls.push("Audio/Incognito - Sunchild.mp3");
-    _MusicUrls.push("Audio/Ficara - Gliding.mp3");
-    _MusicUrls.push("Audio/Ficara - Craig.mp3");
-    _MusicUrls.push("Audio/Eddie Reasoner - Sea Breeze.mp3");
-    _MusicUrls.push("Audio/Chris Camozzi - My Dancing Heart.mp3");
-    _MusicUrls.push("Audio/Chris Camozzi - Suede.mp3");
-    _MusicUrls.push("Audio/Joe Sample - Rainbow Seeker.mp3");
-    _MusicUrls.push("Audio/Norman Brown - Celebration.mp3");
-    _MusicUrls.push("Audio/Wayne Gerard - Aint She Sweet.mp3");
-    _MusicUrls.push("Audio/Wayman Tisdale - Brazilia.mp3");
-    _MusicUrls.push("Audio/The Rippingtons - In Another Life.mp3");
-    _MusicUrls.push("Audio/The Rippingtons - Life In The Tropics.mp3");
-    _MusicUrls.push("Audio/Chris Camozzi - Hangin Out.mp3");
-    _MusicUrls.push("Audio/Bryan Savage - Two Cool.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - 50 Below.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - After Midnight.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - After The Rain.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - All I Need To Know.mp3");
-    // GIT-33 _MusicUrls.push("Audio/Trammell Starks - All That Jazz.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Autumn Blue.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Better Than Nothing.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Bobbys Theme.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Broken Record.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Crazy Pianos.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Desert Nights.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Here Comes The Rain.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Im So Dizzy.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - If You Only Knew.mp3");
-    // GIT-33 _MusicUrls.push("Audio/Trammell Starks - Island Groove.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Just For The Moment.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Midnight Rain.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Pier 32.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Rainbeat.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Road Trip.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Rollercoaster Ride.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Round And Round.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Season On Edge.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Slightly Blued.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Someday.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Something About You.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - The End.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - The Last Song.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - The Mist.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - The Only One For Me.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Under The Influence.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Ups And Downs.mp3");
-    _MusicUrls.push("Audio/Trammell Starks - Water Colors.mp3");
-    //_MusicUrls.push("Audio/.mp3");
+    _musicurls = [];
+    _musicurls.push("audio/andrew korus - hello there.mp3");
+    _musicurls.push("audio/ficara - stormy weather.mp3");
+    _musicurls.push("audio/incognito - larc en ciel de miles.mp3");
+    _musicurls.push("audio/ozzie ahlers - fingerpainting.mp3");
+    _musicurls.push("audio/ray obiedo - blue kiss.mp3");
+    _musicurls.push("audio/richard tyznik - hi times.mp3");
+    _musicurls.push("audio/torcuato mariano - ocean way.mp3");
+    _musicurls.push("audio/gota - all alone.mp3");
+    _musicurls.push("audio/ficara - high tides of maui.mp3");
+    _musicurls.push("audio/chris camozzi - swing shift.mp3");
+    _musicurls.push("audio/brian hughes - stringbean.mp3");
+    _musicurls.push("audio/brian hughes - postcard from brazil.mp3");
+    _musicurls.push("audio/brian hughes - one 2 one.mp3");
+    _musicurls.push("audio/brian hughes - here we go.mp3");
+    _musicurls.push("audio/brian hughes - three graces.mp3");
+    _musicurls.push("audio/ficara - friends forever.mp3");
+    _musicurls.push("audio/physical therapy - what the flush.mp3");
+    _musicurls.push("audio/trammell starks - the blizzard song.mp3");
+    _musicurls.push("audio/terry coleman - just groovin.mp3");
+    _musicurls.push("audio/terry coleman - autumn dance.mp3");
+    _musicurls.push("audio/terry coleman - amazed.mp3");
+    _musicurls.push("audio/ray obiedo - sienna.mp3");
+    _musicurls.push("audio/incognito - sunchild.mp3");
+    _musicurls.push("audio/ficara - gliding.mp3");
+    _musicurls.push("audio/ficara - craig.mp3");
+    _musicurls.push("audio/eddie reasoner - sea breeze.mp3");
+    _musicurls.push("audio/chris camozzi - my dancing heart.mp3");
+    _musicurls.push("audio/chris camozzi - suede.mp3");
+    _musicurls.push("audio/joe sample - rainbow seeker.mp3");
+    _musicurls.push("audio/norman brown - celebration.mp3");
+    _musicurls.push("audio/wayne gerard - aint she sweet.mp3");
+    _musicurls.push("audio/wayman tisdale - brazilia.mp3");
+    _musicurls.push("audio/the rippingtons - in another life.mp3");
+    _musicurls.push("audio/the rippingtons - life in the tropics.mp3");
+    _musicurls.push("audio/chris camozzi - hangin out.mp3");
+    _musicurls.push("audio/bryan savage - two cool.mp3");
+    _musicurls.push("audio/trammell starks - 50 below.mp3");
+    _musicurls.push("audio/trammell starks - after midnight.mp3");
+    _musicurls.push("audio/trammell starks - after the rain.mp3");
+    _musicurls.push("audio/trammell starks - all i need to know.mp3");
+    // git-33 _musicurls.push("audio/trammell starks - all that jazz.mp3");
+    _musicurls.push("audio/trammell starks - autumn blue.mp3");
+    _musicurls.push("audio/trammell starks - better than nothing.mp3");
+    _musicurls.push("audio/trammell starks - bobbys theme.mp3");
+    _musicurls.push("audio/trammell starks - broken record.mp3");
+    _musicurls.push("audio/trammell starks - crazy pianos.mp3");
+    _musicurls.push("audio/trammell starks - desert nights.mp3");
+    _musicurls.push("audio/trammell starks - here comes the rain.mp3");
+    _musicurls.push("audio/trammell starks - im so dizzy.mp3");
+    _musicurls.push("audio/trammell starks - if you only knew.mp3");
+    // git-33 _musicurls.push("audio/trammell starks - island groove.mp3");
+    _musicurls.push("audio/trammell starks - just for the moment.mp3");
+    _musicurls.push("audio/trammell starks - midnight rain.mp3");
+    _musicurls.push("audio/trammell starks - pier 32.mp3");
+    _musicurls.push("audio/trammell starks - rainbeat.mp3");
+    _musicurls.push("audio/trammell starks - road trip.mp3");
+    _musicurls.push("audio/trammell starks - rollercoaster ride.mp3");
+    _musicurls.push("audio/trammell starks - round and round.mp3");
+    _musicurls.push("audio/trammell starks - season on edge.mp3");
+    _musicurls.push("audio/trammell starks - slightly blued.mp3");
+    _musicurls.push("audio/trammell starks - someday.mp3");
+    _musicurls.push("audio/trammell starks - something about you.mp3");
+    _musicurls.push("audio/trammell starks - the end.mp3");
+    _musicurls.push("audio/trammell starks - the last song.mp3");
+    _musicurls.push("audio/trammell starks - the mist.mp3");
+    _musicurls.push("audio/trammell starks - the only one for me.mp3");
+    _musicurls.push("audio/trammell starks - under the influence.mp3");
+    _musicurls.push("audio/trammell starks - ups and downs.mp3");
+    _musicurls.push("audio/trammell starks - water colors.mp3");
+    //_musicurls.push("audio/.mp3");
 
-    _MusicUrlsTemp = _MusicUrls.slice(0);
+    _MusicUrlsTemp = _musicurls.slice(0);
 };
 
 var GetNextMusicUrl = function ()
@@ -13746,8 +13746,8 @@ var LoadAudio = function(Url)
         _AudioCurrentTime = 0;
 
         var req = new XMLHttpRequest();
-        //req.open("GET", "Audio/Trammell Starks - The Blizzard Song.mp3", true);
-        //req.open("GET", "Audio/Brian Hughes - Here We Go.mp3", true);
+        //req.open("GET", "audio/Trammell Starks - The Blizzard Song.mp3", true);
+        //req.open("GET", "audio/Brian Hughes - Here We Go.mp3", true);
         req.open("GET", Url, true);
         req.responseType = "arraybuffer";
         req.onload = function ()
@@ -14891,7 +14891,7 @@ var ScrollHazardText = function (enable)
 
 var LoadBeep = function ()
 {
-    var Url = "Audio/beep.mp3";
+    var Url = "audio/beep.mp3";
 
     if (_BeepRefreshIntervalId)
     {

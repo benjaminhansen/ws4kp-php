@@ -61,11 +61,11 @@ switch($_SERVER['SERVER_NAME']) {
 }
 
 if(!$okToProcess) {
-    die("We cannot proceed!");
+    die();
 }
 
 if(!isset($_GET['u'])) {
-    die("You are missing ?u=<url> in your URL request!");
+    die();
 }
 
 $url = urldecode($_GET['u']);
@@ -116,7 +116,7 @@ if($url_data != "" && !is_null($url_data)) {
     if(str_ends_with($url, ".txt")) {
         die($url_data);
     } else {
-        $image = imagecreatefromstring($url_data);
+        $image = $url_data;
         header("Content-Type: image/png");
         imagepng($image);
         imagedestroy($image);

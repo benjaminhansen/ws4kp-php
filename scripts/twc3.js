@@ -11900,11 +11900,11 @@ var ShowDopplerMap2 = function (WeatherParameters)
 
     if (WeatherParameters.State == "HI")
     {
-        img.src = "images/HawaiiRadarMap2.png";
+        img.src = "images/hawaiiradarmap2.png";
     }
     else
     {
-        img.src = "images/4000RadarMap2.jpg";
+        img.src = "images/4000radarmap2.jpg";
     }
 }
 

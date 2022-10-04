@@ -12461,7 +12461,7 @@ var Progress = function (e)
             {
                 // Conditions Icon
                 gifProgress = new SuperGif({
-                    src: "images/Progress1.gif",
+                    src: "images/progress1.gif",
                     loop_delay: 100,
                     auto_play: true,
                     canvas: canvas,
@@ -12933,7 +12933,7 @@ var DrawLogoImage = function (context)
         };
         //LogoImage.src = "Images/Logo1.png";
         //_LogoImage.src = "Images/Logo3.gif";
-        _LogoImage.src = "images/Logo3.png";
+        _LogoImage.src = "images/logo3.png";
     }
     else
     {

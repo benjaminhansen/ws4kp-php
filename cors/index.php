@@ -1,5 +1,11 @@
 <?php
 
+if($_GET['show_errors'] == 1) {
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+}
+
 function http_get_request($url, $headers = []) {
     $options = array(
         CURLOPT_RETURNTRANSFER => true,   // return web page

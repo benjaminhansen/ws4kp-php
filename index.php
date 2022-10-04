@@ -31,6 +31,10 @@
     <link rel="icon" href="images/logo192.png" />
     <link rel="stylesheet" type="text/css" href="styles/index.css?v=68" />
 
+    <script>
+        var _Autoload = <?php if($_GET['autoload'] == 1){ echo "true"; }else{ echo "false"; } ?>
+    </script>
+
     <script type="text/javascript" src="scripts/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.autocomplete.min.js"></script>
     <script type="text/javascript" src="scripts/NoSleep.min.js"></script>
@@ -227,13 +231,6 @@
         </form><br />
         <input id="chkScrollHazardText" name="chkScrollHazardText" type="checkbox" /><label id="lblScrollHazardText" for="chkScrollHazardText">Hazardous Weather</label>
     </div>
-
-    <script>
-        $(document).ready(function(){
-            $("#aVolume").click();
-            $("#aFullScreen").click();
-        });
-    </script>
 
 </body>
 </html>

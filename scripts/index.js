@@ -438,7 +438,7 @@ var EnterFullScreen = function ()
         // Native full screen.
         //requestMethod.call(element);
         requestMethod.call(element, { navigationUI: "hide" }); // https://bugs.chromium.org/p/chromium/issues/detail?id=933436#c7
-    } 
+    }
     else if (typeof window.ActiveXObject !== "undefined")
     {
         // Older IE.
@@ -551,7 +551,7 @@ var LoadTwcData = function (Url, AutoRefresh)
                 iframeTwc[0].contentWindow.SetCallBack({ CallBack: TwcCallBack });
 
                 iframeTwc[0].contentWindow.GetLatLng(Url);
-                
+
                 if (_IsPlaying == true)
                 {
                     iframeTwc[0].contentWindow.NavigatePlayToggle();
@@ -701,6 +701,10 @@ var TwcCallBack = function (e)
 
             _LastUpdate = e.LastUpdate;
             AssignLastUpdate();
+            if(_Autoload) {
+                $("#aVolume").click();
+                $("#aFullScreen").click();
+            }
             break;
 
         case "WEATHERPARAMETERS":
@@ -966,7 +970,7 @@ var document_keydown = function (e)
                 btnFullScreen_click();
                 return false;
                 break;
-                
+
         }
     }
 };

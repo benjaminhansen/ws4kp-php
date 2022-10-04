@@ -1,24 +1,33 @@
 <?php
 
-if($_GET['show_errors'] == 1) {
+/*
+    Author: BJ Hansen <bjhansen@benjaminhansen.net>
+    Version: 1.0
+    Package: WeatherStar 4000+ CORS PHP Shim
+    Description: Allows the WeatherStar 4000+ project to run on *nix environments
+    Notes: This code has been ported from the Default.aspx file used in Windows environments
+*/
+
+// useful for troubleshooting
+if($_GET['display_errors'] == 1) {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 }
 
+// curl shim/helper function
 function http_get_request($url, $headers = []) {
-    $options = array(
+    $options = [
         CURLOPT_RETURNTRANSFER => true,   // return web page
         CURLOPT_HEADER         => false,  // don't return headers
         CURLOPT_FOLLOWLOCATION => true,   // follow redirects
         CURLOPT_MAXREDIRS      => 10,     // stop after 10 redirects
         CURLOPT_ENCODING       => "",     // handle compressed
-        // CURLOPT_USERAGENT      => "test", // name of client
         CURLOPT_AUTOREFERER    => true,   // set referrer on redirect
         CURLOPT_CONNECTTIMEOUT => 120,    // time-out on connect
         CURLOPT_TIMEOUT        => 120,    // time-out on response
         CURLOPT_HTTPHEADER     => $headers,
-    );
+    ];
 
     $ch = curl_init($url);
     curl_setopt_array($ch, $options);
@@ -27,6 +36,7 @@ function http_get_request($url, $headers = []) {
     return $content;
 }
 
+// shim function, if running less than PHP 8.0
 if(!function_exists("str_starts_with")) {
     function str_starts_with( $haystack, $needle ) {
         $length = strlen( $needle );
@@ -34,6 +44,7 @@ if(!function_exists("str_starts_with")) {
     }
 }
 
+// shim function, if running less than PHP 8.0
 if(!function_exists("str_ends_with")) {
     function str_ends_with( $haystack, $needle ) {
         $length = strlen( $needle );
@@ -44,28 +55,27 @@ if(!function_exists("str_ends_with")) {
     }
 }
 
+// shim function, if running less than PHP 8.0
 if(!function_exists("str_contains")) {
     function str_contains($haystack, $needle) {
         return strpos($haystack, $needle) !== false;
     }
 }
 
-$okToProcess = false;
-
-switch($_SERVER['SERVER_NAME']) {
-    case "localhost":
-    case "127.0.0.1":
-    case "development1.servers.happilyhansen.net":
-    case "weatherstar.dev.benjaminhansen.net":
-        $okToProcess = true;
-        break;
+// only allow the following server_names to process requests
+$allowed_servers = [
+    "localhost",
+    "127.0.0.1",
+    "development1.servers.happilyhansen.net",
+    "weatherstar.dev.benjaminhansen.net"
+];
+if(!in_array($_SERVER['SERVER_NAME'], $allowed_servers)) {
+    $okToProcess = false;
+} else {
+    $okToProcess = true;
 }
 
-if(!$okToProcess) {
-    die();
-}
-
-if(!isset($_GET['u'])) {
+if(!$okToProcess || !isset($_GET['u'])) {
     die();
 }
 
@@ -101,24 +111,24 @@ switch(strtolower($url_parsed['host'])) {
         break;
 }
 
+// build custom headers needed for the different APIs
 $headers = [];
 if(str_contains($url, "api.weather.gov")) {
-    $headers[] = "User-Agent: (WeatherStar 4000+/v1 (https://battaglia.ddns.net/twc; vbguyny@gmail.com)";
+    $headers[] = "User-Agent: (WeatherStar 4000+/v1 (https://weatherstar.dev.benjaminhansen.net/; bhansen012@gmail.com)";
     $headers[] = "Accept: application/vnd.noaa.dwml+xml";
 } else {
     $headers[] = "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36";
 }
 
+// spoof the Origin header
 $origin = $url_parsed['scheme']."://".$url_parsed['host'];
 $headers[] = "Origin: $origin";
 
+// let's do this!
 $url_data = http_get_request($url, $headers);
 if($url_data != "" && !is_null($url_data)) {
-    if(str_ends_with($url, ".txt")) {
-        die($url_data);
-    } else {
-        $image = $url_data;
+    if(!str_ends_with($url, ".txt")) {
         header("Content-Type: image/png");
-        die($image);
     }
+    echo $url_data;
 }

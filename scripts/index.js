@@ -701,10 +701,12 @@ var TwcCallBack = function (e)
 
             _LastUpdate = e.LastUpdate;
             AssignLastUpdate();
-            if(_Autoload) {
-                $("#aVolume").click();
-                $("#aFullScreen").click();
-            }
+            // if(_Autoload) {
+            //     $("#aVolume").click();
+            //     console.log("Volume enabled");
+            //     $("#aFullScreen").click();
+            //     console.log("Fullscreen enabled");
+            // }
             break;
 
         case "WEATHERPARAMETERS":

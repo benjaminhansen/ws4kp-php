@@ -152,15 +152,15 @@
 
     <br />
 
-    <div id="divGitHub">
+    <!-- <div id="divGitHub"> -->
         <!--<a class="github-button" href="https://github.com/vbguyny/ws4kp" data-style="large" data-count-href="/vbguyny/ws4kp/network" data-count-api="/repos/vbguyny/ws4kp#forks_count" data-count-aria-label="# forks on GitHub" aria-label="Fork vbguyny/ws4kp on GitHub">GitHub</a>-->
-        <a class="github-button" href="https://github.com/vbguyny/ws4kp" data-icon="" data-size="large" data-show-count="false" aria-label="GitHub">GitHub</a>
+        <!-- <a class="github-button" href="https://github.com/vbguyny/ws4kp" data-icon="" data-size="large" data-show-count="false" aria-label="GitHub">GitHub</a>
         <a class="github-button" href="https://github.com/vbguyny/ws4kp" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star vbguyny/ws4kp on GitHub">Star</a>
         <a class="github-button" href="https://github.com/vbguyny/ws4kp/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork vbguyny/ws4kp on GitHub">Fork</a>        <a class="github-button" href="https://github.com/vbguyny/ws4kp/issues" data-icon="octicon-issue-opened" data-size="large" aria-label="Issue vbguyny/ws4kp on GitHub">Issue</a>
         <a class="github-button" href="https://github.com/vbguyny" data-size="large" aria-label="Follow @vbguyny on GitHub">Follow @vbguyny</a>
-    </div>
+    </div> -->
 
-    <br />
+    <!-- <br /> -->
 
     <div id="divInfo">
         <span id="spanLocation">
@@ -227,6 +227,13 @@
         </form><br />
         <input id="chkScrollHazardText" name="chkScrollHazardText" type="checkbox" /><label id="lblScrollHazardText" for="chkScrollHazardText">Hazardous Weather</label>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#aVolume").click();
+            $("#aFullScreen").click();
+        });
+    </script>
 
 </body>
 </html>

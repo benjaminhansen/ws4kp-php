@@ -56,6 +56,7 @@ switch($_SERVER['SERVER_NAME']) {
     case "localhost":
     case "127.0.0.1":
     case "development1.servers.happilyhansen.net":
+    case "weatherstar.dev.benjaminhansen.net":
         $okToProcess = true;
         break;
 }

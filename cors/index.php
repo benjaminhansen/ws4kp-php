@@ -118,8 +118,6 @@ if($url_data != "" && !is_null($url_data)) {
     } else {
         $image = $url_data;
         header("Content-Type: image/png");
-        imagepng($image);
-        imagedestroy($image);
-        die();
+        die($image);
     }
 }

@@ -21,7 +21,7 @@ function http_get_request($url, $headers = []) {
     );
 
     $ch = curl_init($url);
-    curl_setopt_array($options);
+    curl_setopt_array($ch, $options);
     $content = curl_exec($ch);
     curl_close($ch);
     return $content;

@@ -114,7 +114,7 @@ switch(strtolower($url_parsed['host'])) {
 // build custom headers needed for the different APIs
 $headers = [];
 if(str_contains($url, "api.weather.gov")) {
-    $headers[] = "User-Agent: (WeatherStar 4000+/v1 (https://weatherstar.dev.benjaminhansen.net/; bhansen012@gmail.com)";
+    $headers[] = "User-Agent: Mozilla/5.0 (Windows NT 6.2; WOW64; rv:17.0) Gecko/20100101 Firefox/17.0";
     $headers[] = "Accept: application/vnd.noaa.dwml+xml";
 } else {
     $headers[] = "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36";

@@ -583,7 +583,7 @@ var GetMonthPrecipitation = function (WeatherParameters) {
     var FirstOfMonth = new Date(Now.getFullYear(), Now.getMonth(), 1);
     var LastOfMonth = new Date(Now.getFullYear(), Now.getMonth() + 1, 1).addDays(-1);
 
-    //https://api.weather.com/v3/location/near?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.83%2C-73.02&product=airport&subproduct=major&format=json
+    //https://api.weather.com/v3/location/near?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=40.83%2C-73.02&product=airport&subproduct=major&format=json
     var Url = "https://api.weather.com/v3/location/near?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=";
     Url += WeatherParameters.Latitude.toString() + "%2C";
     Url += WeatherParameters.Longitude.toString();
@@ -627,9 +627,9 @@ var GetMonthPrecipitation = function (WeatherParameters) {
                             return;
                         }
 
-                        //https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
-                        //This also has the moon and sun data: https://api.weather.com/v3/wx/forecast/daily/3day?language=en-US&apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.83%2C-73.02&units=e&format=json
-                        var Url = "https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=";
+                        //https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
+                        //This also has the moon and sun data: https://api.weather.com/v3/wx/forecast/daily/3day?language=en-US&apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=40.83%2C-73.02&units=e&format=json
+                        var Url = "https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=";
                         Url += WeatherParameters.Latitude.toString() + "%2C";
                         Url += WeatherParameters.Longitude.toString();
                         Url += "&days=1&date=" + Now.getFullYear().pad() + (Now.getMonth() + 1).pad(2) + Now.getDate().pad(2) + "&format=json";
@@ -650,8 +650,8 @@ var GetMonthPrecipitation = function (WeatherParameters) {
 
                                 var Now = new Date();
                                 Now = Now.addDays(1);
-                                //https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
-                                var Url = "https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=";
+                                //https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
+                                var Url = "https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=";
                                 Url += WeatherParameters.Latitude.toString() + "%2C";
                                 Url += WeatherParameters.Longitude.toString();
                                 Url += "&days=1&date=" + Now.getFullYear().pad() + (Now.getMonth() + 1).pad(2) + Now.getDate().pad(2) + "&format=json";
@@ -723,9 +723,9 @@ var GetMonthPrecipitation = function (WeatherParameters) {
     //                return;
     //            }
 
-    //            //https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
-    //            //This also has the moon and sun data: https://api.weather.com/v3/wx/forecast/daily/3day?language=en-US&apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.83%2C-73.02&units=e&format=json
-    //            var Url = "https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=";
+    //            //https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
+    //            //This also has the moon and sun data: https://api.weather.com/v3/wx/forecast/daily/3day?language=en-US&apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=40.83%2C-73.02&units=e&format=json
+    //            var Url = "https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=";
     //            Url += WeatherParameters.Latitude.toString() + "%2C";
     //            Url += WeatherParameters.Longitude.toString();
     //            Url += "&days=1&date=" + Now.getFullYear().pad() + (Now.getMonth() + 1).pad(2) + Now.getDate().pad(2) + "&format=json";
@@ -746,8 +746,8 @@ var GetMonthPrecipitation = function (WeatherParameters) {
 
     //                    var Now = new Date();
     //                    Now = Now.addDays(1);
-    //                    //https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
-    //                    var Url = "https://api.weather.com/v2/astro?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=";
+    //                    //https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=40.81999969%2C-73&days=1&date=20181223&format=json
+    //                    var Url = "https://api.weather.com/v2/astro?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=";
     //                    Url += WeatherParameters.Latitude.toString() + "%2C";
     //                    Url += WeatherParameters.Longitude.toString();
     //                    Url += "&days=1&date=" + Now.getFullYear().pad() + (Now.getMonth() + 1).pad(2) + Now.getDate().pad(2) + "&format=json";

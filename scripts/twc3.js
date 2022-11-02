@@ -584,7 +584,7 @@ var GetMonthPrecipitation = function (WeatherParameters) {
     var LastOfMonth = new Date(Now.getFullYear(), Now.getMonth() + 1, 1).addDays(-1);
 
     //https://api.weather.com/v3/location/near?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=40.83%2C-73.02&product=airport&subproduct=major&format=json
-    var Url = "https://api.weather.com/v3/location/near?apiKey=6532d6454b8aa370768e63d6ba5a832e&geocode=";
+    var Url = "https://api.weather.com/v3/location/near?apiKey=21d8a80b3d6b444998a80b3d6b1449d3&geocode=";
     Url += WeatherParameters.Latitude.toString() + "%2C";
     Url += WeatherParameters.Longitude.toString();
     Url += "&product=airport&subproduct=major&format=json";
